@@ -5,6 +5,7 @@ import com.example.sbes.service.UserReposity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Required;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -24,7 +25,7 @@ public class TestController {
     private UserReposity userReposity;
 
 
-    @RequestMapping("/addUser")
+    @PostMapping("/addUser")
     public  ResponseEntity addUser(@RequestBody(required = true)  User user){
 
         return   ResponseEntity.ok(userReposity.save(user));
