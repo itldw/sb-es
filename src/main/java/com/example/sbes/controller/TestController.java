@@ -25,8 +25,14 @@ public class TestController {
     private UserReposity userReposity;
 
 
+
+
+
+
     @PostMapping("/addUser")
     public  ResponseEntity addUser(@RequestBody(required = true)  User user){
+
+
 
         return   ResponseEntity.ok(userReposity.save(user));
     }
